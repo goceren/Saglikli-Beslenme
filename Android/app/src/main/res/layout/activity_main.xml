@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/main_nav"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorWhite"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+        app:menu="@menu/nav_items"></com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/ozet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Özet"
+                    android:textColor="@color/colorBlackT"
+                    android:textSize="20sp"
+                    />
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <TextView
+                        android:id="@+id/detaylar"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="right"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Detaylar"
+                        android:textColor="@color/colorBlackT"
+                        android:textSize="20sp"
+                        />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ui2"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="Kalori Tüketimi"
+                                android:textColor="#fff"
+                                android:textSize="24dp" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_marginTop="-8dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/food1" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginLeft="6dp"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="Tamamlanan"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="#fff"
+                                    android:layout_height="wrap_content" />
+                                <RelativeLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent">
+                                    <TextView
+                                        android:id="@+id/kaloriyuzde"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:gravity="right"
+                                        android:fontFamily="@font/roboto_regular"
+                                        android:textColor="#fff"
+                                        />
+                                </RelativeLayout>
+                            </LinearLayout>
+                            <ProgressBar
+                                android:id="@+id/kaloriprogressBar"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="21dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ui"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="Protein Tüketimi"
+                                android:textColor="#fff"
+                                android:textSize="24dp" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_marginTop="-8dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/food3" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginLeft="6dp"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="Tamamlanan"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="#fff"
+                                    android:layout_height="wrap_content" />
+                                <RelativeLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent">
+                                    <TextView
+                                        android:id="@+id/proteinyuzde"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:gravity="right"
+                                        android:fontFamily="@font/roboto_regular"
+                                        android:textColor="#fff"
+                                        />
+                                </RelativeLayout>
+                            </LinearLayout>
+                            <ProgressBar
+                                android:id="@+id/proteinprogressBar"
+                                android:layout_marginTop="10dp"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="21dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ui4"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="Karbonhidrat Tüketimi"
+                                android:textColor="#fff"
+                                android:textSize="24dp" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_marginTop="-8dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/food4" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginLeft="6dp"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="Tamamlanan"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="#fff"
+                                    android:layout_height="wrap_content" />
+                                <RelativeLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent">
+                                    <TextView
+                                        android:id="@+id/karbonhidratyuzde"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:gravity="right"
+                                        android:fontFamily="@font/roboto_regular"
+                                        android:textColor="#fff"
+                                        />
+                                </RelativeLayout>
+                            </LinearLayout>
+                            <ProgressBar
+                                android:id="@+id/karbonhidratprogress"
+                                android:layout_marginTop="10dp"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="21dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ui5"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="Yağ Tüketimi"
+                                android:textColor="#fff"
+                                android:textSize="24dp" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_marginTop="-8dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/food5" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginLeft="6dp"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="Tamamlanan"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="#fff"
+                                    android:layout_height="wrap_content" />
+                                <RelativeLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent">
+                                    <TextView
+                                        android:id="@+id/yagyuzde"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:gravity="right"
+                                        android:fontFamily="@font/roboto_regular"
+                                        android:textColor="#fff"
+                                        />
+                                </RelativeLayout>
+                            </LinearLayout>
+                            <ProgressBar
+                                android:id="@+id/yagprogress"
+                                android:layout_marginTop="10dp"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="21dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ui3"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="Su Tüketimi"
+                                android:textColor="#fff"
+                                android:textSize="24dp" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_marginTop="-8dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/su" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginLeft="6dp"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="Tamamlanan"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:textColor="#fff"
+                                    android:layout_height="wrap_content" />
+                                <RelativeLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent">
+                                    <TextView
+                                        android:id="@+id/suyuzde"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:gravity="right"
+                                        android:fontFamily="@font/roboto_regular"
+                                        android:textColor="#fff"
+                                        />
+                                </RelativeLayout>
+                            </LinearLayout>
+                            <ProgressBar
+                                android:id="@+id/waterprogressBar"
+                                android:layout_marginTop="10dp"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="21dp"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+
+                >
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="titleTextColor">#222223</item>
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorControlActivated">#222223</item>
+        <item name="colorPrimaryDark">@color/colorBlackT</item>
+        <item name="colorAccent">@color/colorBlueT</item>
+    </style>
+
+    <style name="AppTheme.FullScreen">
+        <item name="android:windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+</resources>

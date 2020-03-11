@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#000</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorWhiteTransparent">#80ffffff</color>
+
+    <color name="colorPurple">#983CFF</color>
+    <color name="colorPurpleT">#64983cff</color>
+    <color name="colorBlue">#2FB4FF</color>
+    <color name="colorBlueT">#642fb4ff</color>
+
+    <color name="colorBlackT">#adaeb0</color>
+    <color name="colorBlack">#222223</color>
+
+</resources>
