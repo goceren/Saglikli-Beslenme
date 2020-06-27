@@ -36,11 +36,27 @@ namespace SAV.DataAccess.EFCoreManager
             }
         }
 
+        public List<Besinler> GetAllFalse()
+        {
+            using (var context = new DatabaseContext())
+            {
+                return context.Besinler.Where(i => i.ozel == false).ToList();
+            }
+        }
+
         public Besinler GetById(int id)
         {
             using (var context = new DatabaseContext())
             {
                 return context.Besinler.Where(i => i.BesinlerId == id).FirstOrDefault();
+            }
+        }
+
+        public List<Besinler> GetByUserId(int id)
+        {
+            using (var context = new DatabaseContext())
+            {
+                return context.Besinler.Where(i => i.KullaniciId == id).ToList();
             }
         }
 

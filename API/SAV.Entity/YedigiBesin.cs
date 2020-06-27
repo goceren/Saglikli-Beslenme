@@ -11,5 +11,6 @@ namespace SAV.Entity
         public int Porsiyon { get; set; }
         public Besinler Besin { get; set; }
         public DateTime Date { get; set; }
+        public bool ozel { get; set; }
     }
 }

@@ -45,7 +45,8 @@ namespace SAV.DataAccess.EFCoreManager
         {
             using (var context = new DatabaseContext())
             {
-                return context.Users.Where(i => i.UsersId == id).FirstOrDefault();
+                var kullanici = context.Users.Where(i => i.UsersId == id).FirstOrDefault();
+                return kullanici;
             }
         }
 

@@ -122,14 +122,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                       Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                       startActivity(intent);
                                   }
-                                   Toast.makeText(RegisterActivity.this, s, Toast.LENGTH_SHORT).show();
+                                  // Toast.makeText(RegisterActivity.this, s, Toast.LENGTH_SHORT).show();
                                    dialog.dismiss();
                                }
                            }, new Consumer<Throwable>() {
                                @Override
                                public void accept(Throwable throwable) throws Exception {
                                    dialog.dismiss();
-                                   Toast.makeText(RegisterActivity.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                                  // Toast.makeText(RegisterActivity.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
                                }
                            }
                 )

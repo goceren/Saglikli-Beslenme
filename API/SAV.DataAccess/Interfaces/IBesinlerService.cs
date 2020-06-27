@@ -10,7 +10,12 @@ namespace SAV.DataAccess.Interfaces
         void Create(Besinler entity);
         void Update(Besinler entity);
         void Delete(Besinler entity);
+
+        List<Besinler> GetAllFalse();
         List<Besinler> GetAll();
+        List<Besinler> GetByUserId(int id);
+
         Besinler GetById(int id);
+
     }
 }

@@ -14,7 +14,7 @@
         android:title="@string/nav_yemek" />
     <item
         android:id="@+id/nav_alarm"
-        android:icon="@drawable/baseline_alarm_black_18dp"
+        android:icon="@drawable/ic_water"
         android:state_checked="false"
         android:title="@string/nav_alarm" />
     <item

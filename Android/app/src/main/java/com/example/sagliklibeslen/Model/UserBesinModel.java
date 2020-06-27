@@ -31,7 +31,31 @@ public class UserBesinModel implements Serializable {
     public double ToplamProtein;
     public double ToplamKarbonhidrat;
     public double ToplamYag ;
-    public List<BesinlerModel> BesinlerModel;
+    public double AltLimitKarbon;
+    public double UstLimitKarbon;
+    public double AltLimitProtein;
+    public double SuLimit;
+
+    public double getSuLimit() {
+        return SuLimit;
+    }
+
+    public void setSuLimit(double suLimit) {
+        SuLimit = suLimit;
+    }
+
+    public double getLimitKalori() {
+        return LimitKalori;
+    }
+
+    public void setLimitKalori(double limitKalori) {
+        LimitKalori = limitKalori;
+    }
+
+    public double UstLimitProtein;
+    public double AltLimitYag;
+    public double UstLimitYag;
+    public double LimitKalori;
 
     @Override
     public String toString() {
@@ -50,9 +74,67 @@ public class UserBesinModel implements Serializable {
                 ", ToplamProtein=" + ToplamProtein +
                 ", ToplamKarbonhidrat=" + ToplamKarbonhidrat +
                 ", ToplamYag=" + ToplamYag +
+                ", AltLimitKarbon=" + AltLimitKarbon +
+                ", UstLimitKarbon=" + UstLimitKarbon +
+                ", AltLimitProtein=" + AltLimitProtein +
+                ", UstLimitProtein=" + UstLimitProtein +
+                ", AltLimitYag=" + AltLimitYag +
+                ", UstLimitYag=" + UstLimitYag +
+                ", LimitKalori=" + LimitKalori +
+                ", SuLimit=" + SuLimit +
                 ", BesinlerModel=" + BesinlerModel +
                 '}';
     }
+
+    public double getAltLimitKarbon() {
+        return AltLimitKarbon;
+    }
+
+    public void setAltLimitKarbon(double altLimitKarbon) {
+        AltLimitKarbon = altLimitKarbon;
+    }
+
+    public double getUstLimitKarbon() {
+        return UstLimitKarbon;
+    }
+
+    public void setUstLimitKarbon(double ustLimitKarbon) {
+        UstLimitKarbon = ustLimitKarbon;
+    }
+
+    public double getAltLimitProtein() {
+        return AltLimitProtein;
+    }
+
+    public void setAltLimitProtein(double altLimitProtein) {
+        AltLimitProtein = altLimitProtein;
+    }
+
+    public double getUstLimitProtein() {
+        return UstLimitProtein;
+    }
+
+    public void setUstLimitProtein(double ustLimitProtein) {
+        UstLimitProtein = ustLimitProtein;
+    }
+
+    public double getAltLimitYag() {
+        return AltLimitYag;
+    }
+
+    public void setAltLimitYag(double altLimitYag) {
+        AltLimitYag = altLimitYag;
+    }
+
+    public double getUstLimitYag() {
+        return UstLimitYag;
+    }
+
+    public void setUstLimitYag(double ustLimitYag) {
+        UstLimitYag = ustLimitYag;
+    }
+
+    public List<BesinlerModel> BesinlerModel;
 
     public static UserBesinModel JsontoObject(String s) throws JSONException, ParseException {
         UserBesinModel user = new UserBesinModel();
@@ -73,6 +155,14 @@ public class UserBesinModel implements Serializable {
                 user.ToplamProtein = object.getDouble("toplamProtein");
                 user.ToplamKarbonhidrat = object.getDouble("toplamKarbonhidrat");
                 user.ToplamYag = object.getDouble("toplamYag");
+                user.AltLimitKarbon = object.getDouble("altLimitKarbon");
+                user.UstLimitKarbon = object.getDouble("ustLimitKarbon");
+                user.AltLimitProtein = object.getDouble("altLimitProtein");
+                user.UstLimitProtein = object.getDouble("ustLimitProtein");
+                user.AltLimitYag = object.getDouble("altLimitYag");
+                user.UstLimitYag = object.getDouble("ustLimitYag");
+                user.LimitKalori = object.getDouble("limitKalori");
+                user.SuLimit = object.getDouble("suLimit");
                 JSONArray array =  object.getJSONArray("besinlerModel");
                 List<BesinlerModel> listModel = new ArrayList<BesinlerModel>();
                 for (int i = 0; i < array.length() ; i++){
@@ -124,7 +214,7 @@ public class UserBesinModel implements Serializable {
     }
 
 
-    public UserBesinModel(int usersId, String name, String email, String password, String salt, int age, int weight, int length, boolean cinsiyet, boolean admin, double toplamKalori, double toplamProtein, double toplamKarbonhidrat, double toplamYag, List<com.example.sagliklibeslen.Model.BesinlerModel> besinlerModel) {
+    public UserBesinModel(int usersId, String name, String email, String password, String salt, int age, int weight, int length, boolean cinsiyet, boolean admin, double toplamKalori, double toplamProtein, double toplamKarbonhidrat, double toplamYag, double altLimitKarbon, double ustLimitKarbon, double altLimitProtein, double ustLimitProtein, double altLimitYag, double ustLimitYag, double limitKalori, double suLimit, List<com.example.sagliklibeslen.Model.BesinlerModel> besinlerModel) {
         UsersId = usersId;
         Name = name;
         Email = email;
@@ -139,7 +229,16 @@ public class UserBesinModel implements Serializable {
         ToplamProtein = toplamProtein;
         ToplamKarbonhidrat = toplamKarbonhidrat;
         ToplamYag = toplamYag;
+        AltLimitYag = altLimitYag;
+        AltLimitProtein = altLimitProtein;
+        AltLimitKarbon = altLimitKarbon;
+        UstLimitKarbon = ustLimitKarbon;
+        UstLimitYag = ustLimitYag;
+        UstLimitProtein = ustLimitProtein;
+        LimitKalori = limitKalori;
+        SuLimit = suLimit;
         BesinlerModel = besinlerModel;
+
     }
     public UserBesinModel() {
     }
@@ -158,6 +257,14 @@ public class UserBesinModel implements Serializable {
         ToplamProtein = model.getToplamProtein();
         ToplamKarbonhidrat = model.getToplamKarbonhidrat();
         ToplamYag = model.getToplamYag();
+        AltLimitYag = model.getAltLimitYag();
+        AltLimitProtein = model.getAltLimitProtein();
+        AltLimitKarbon = model.getAltLimitKarbon();
+        UstLimitKarbon = model.getUstLimitKarbon();
+        UstLimitYag = model.getUstLimitYag();
+        UstLimitProtein = model.getUstLimitProtein();
+        LimitKalori = model.getLimitKalori();
+        SuLimit = model.getSuLimit();
         BesinlerModel = model.getBesinlerModel();
     }
 

@@ -26,6 +26,12 @@ namespace SAV.DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("KullaniciId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("barkodNo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("besinAdi")
                         .HasColumnType("nvarchar(max)");
 
@@ -41,9 +47,33 @@ namespace SAV.DataAccess.Migrations
                     b.Property<double>("besinYag")
                         .HasColumnType("float");
 
+                    b.Property<bool>("ozel")
+                        .HasColumnType("bit");
+
                     b.HasKey("BesinlerId");
 
                     b.ToTable("Besinler");
+                });
+
+            modelBuilder.Entity("SAV.Entity.Su", b =>
+                {
+                    b.Property<int>("SuId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Kullanici")
+                        .HasColumnType("int");
+
+                    b.Property<int>("bardakSayisi")
+                        .HasColumnType("int");
+
+                    b.HasKey("SuId");
+
+                    b.ToTable("Su");
                 });
 
             modelBuilder.Entity("SAV.Entity.Users", b =>
@@ -59,6 +89,15 @@ namespace SAV.DataAccess.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
+                    b.Property<double>("AltLimitKarbon")
+                        .HasColumnType("float");
+
+                    b.Property<double>("AltLimitProtein")
+                        .HasColumnType("float");
+
+                    b.Property<double>("AltLimitYag")
+                        .HasColumnType("float");
+
                     b.Property<bool>("Cinsiyet")
                         .HasColumnType("bit");
 
@@ -66,6 +105,9 @@ namespace SAV.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Length")
+                        .HasColumnType("float");
+
+                    b.Property<double>("LimitKalori")
                         .HasColumnType("float");
 
                     b.Property<string>("Name")
@@ -76,6 +118,18 @@ namespace SAV.DataAccess.Migrations
 
                     b.Property<string>("Salt")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("SuLimit")
+                        .HasColumnType("float");
+
+                    b.Property<double>("UstLimitKarbon")
+                        .HasColumnType("float");
+
+                    b.Property<double>("UstLimitProtein")
+                        .HasColumnType("float");
+
+                    b.Property<double>("UstLimitYag")
+                        .HasColumnType("float");
 
                     b.Property<double>("Weight")
                         .HasColumnType("float");
@@ -98,6 +152,9 @@ namespace SAV.DataAccess.Migrations
 
                     b.Property<int>("Porsiyon")
                         .HasColumnType("int");
+
+                    b.Property<bool>("ozel")
+                        .HasColumnType("bit");
 
                     b.HasKey("BesinlerId", "UsersId", "Date");
 

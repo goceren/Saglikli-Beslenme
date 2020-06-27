@@ -13,6 +13,7 @@ namespace SAV.DataAccess.EFCoreManager
 
             //optionsBuilder.UseSqlServer(@"data source = (localdb)\mssqllocaldb; Database=SAV; Trusted_Connection=true;");
 
+
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,5 +23,6 @@ namespace SAV.DataAccess.EFCoreManager
 
         public DbSet<Besinler> Besinler { get; set; }
         public DbSet<Users> Users { get; set; }
+        public DbSet<Su> Su { get; set; }
     }
 }

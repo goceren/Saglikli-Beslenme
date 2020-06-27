@@ -8,11 +8,16 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/baseline_date_range_black_18dp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AlarmActivity"></activity>
-        <activity android:name=".AyarlarActivity" />
+        <activity android:name=".YedigimEkleActivity" />
+        <activity android:name=".OzetActivity" />
+        <activity android:name=".BesinGuncelle" />
+        <activity android:name=".BesinEkleActivity" />
+        <activity android:name=".AlarmActivity" />
+        <activity
+            android:name=".AyarlarActivity"
+            android:theme="@style/AppTheme.FullScreen" />
         <activity android:name=".BesinlerActivity" />
         <activity
             android:name=".DetailActivity"
@@ -30,6 +35,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name = ".MyNotificationPublisher" />
 
         <meta-data
             android:name="preloaded_fonts"

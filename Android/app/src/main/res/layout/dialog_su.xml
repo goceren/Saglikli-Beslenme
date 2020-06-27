@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/radiuslayout"
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Bardak Sayısı"
+            android:textColor="@color/colorPurple"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/bardak_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:np_orientation="horizontal"
+            app:np_height="64dp"
+            app:np_dividerColor="@color/colorBlue"
+            app:np_formatter="%02d"
+            app:np_selectedTextColor="@color/colorPurple"
+            app:np_selectedTextSize="25sp"
+            app:np_textColor="@color/colorPrimary"
+            app:np_textSize="19sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/su_kaydet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bt_uifb"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Kaydet"
+            android:textColor="@color/colorPurple" />
+
+    </LinearLayout>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

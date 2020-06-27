@@ -28,6 +28,7 @@ namespace SAV.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IBesinlerService, EFCoreBesinlerManager>();
+            services.AddTransient<ISuService, EFCoreSuManager>();
             services.AddTransient<IUserServices, EFCoreUserManager>();
             services.AddTransient<IYedigiBesinService, EFCoreYedigiBesinManager>();
             services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);

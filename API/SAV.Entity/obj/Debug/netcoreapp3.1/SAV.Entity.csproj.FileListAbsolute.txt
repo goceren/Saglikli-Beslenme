@@ -30,3 +30,13 @@ D:\ProjectFolders\GitHub\Mobil\Saglikli-Beslenme\API\SAV.Entity\obj\Debug\netcor
 D:\ProjectFolders\GitHub\Mobil\Saglikli-Beslenme\API\SAV.Entity\obj\Debug\netcoreapp3.1\SAV.Entity.AssemblyInfo.cs
 D:\ProjectFolders\GitHub\Mobil\Saglikli-Beslenme\API\SAV.Entity\obj\Debug\netcoreapp3.1\SAV.Entity.dll
 D:\ProjectFolders\GitHub\Mobil\Saglikli-Beslenme\API\SAV.Entity\obj\Debug\netcoreapp3.1\SAV.Entity.pdb
+D:\ProjectFolders\GitHub\Mobil\Saglikli-Beslenme\API\SAV.Entity\obj\Debug\netcoreapp3.1\SAV.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Goceren\Desktop\API\SAV.Entity\bin\Debug\netcoreapp3.1\SAV.Entity.deps.json
+C:\Users\Goceren\Desktop\API\SAV.Entity\bin\Debug\netcoreapp3.1\SAV.Entity.dll
+C:\Users\Goceren\Desktop\API\SAV.Entity\bin\Debug\netcoreapp3.1\SAV.Entity.pdb
+C:\Users\Goceren\Desktop\API\SAV.Entity\obj\Debug\netcoreapp3.1\SAV.Entity.csprojAssemblyReference.cache
+C:\Users\Goceren\Desktop\API\SAV.Entity\obj\Debug\netcoreapp3.1\SAV.Entity.AssemblyInfoInputs.cache
+C:\Users\Goceren\Desktop\API\SAV.Entity\obj\Debug\netcoreapp3.1\SAV.Entity.AssemblyInfo.cs
+C:\Users\Goceren\Desktop\API\SAV.Entity\obj\Debug\netcoreapp3.1\SAV.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Goceren\Desktop\API\SAV.Entity\obj\Debug\netcoreapp3.1\SAV.Entity.dll
+C:\Users\Goceren\Desktop\API\SAV.Entity\obj\Debug\netcoreapp3.1\SAV.Entity.pdb

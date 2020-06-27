@@ -29,6 +29,7 @@ import com.example.sagliklibeslen.Remote.IMyAPI;
 import com.example.sagliklibeslen.Remote.RetrofitClient;
 import com.example.sagliklibeslen.Session.SessionManagement;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -50,10 +51,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private BottomNavigationView mainNav;
     private Calendar calendar;
     private DatePickerDialog dateTimePicker;
+    private FloatingActionButton fab;
 
-
-    private ProgressBar waterProgress, kaloriProgress, proteinProggress, karbonhidratProgress, yagProgress;
-    private TextView suyuzde, proteinyuzde, kaloriyuzde, ozet, detaylar, yagYuzde, karbonhidratYuzde;
+    private ProgressBar kaloriProgress, proteinProggress, karbonhidratProgress, yagProgress;
+    private TextView  proteinyuzde, kaloriyuzde, ozet, detaylar, yagYuzde, karbonhidratYuzde, alinanProtein, gunlukProtein, alinanKalori, gunlukKalori, alinanYag, gunlukYag, alinanKarbonhidrat, gunlukKarbonhidrat;
 
     Intent intent;
     private UserBesinModel currentUser;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         iMyAPI = RetrofitClient.getInstance().create(IMyAPI.class);
         tanimla();
+
     }
 
     // Anasayfa açıldığında session kontrolü yapılacak
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Session var mı yani giriş yapılmış mı kontrol et
         checkSession();
     }
+
 
     // Session kontrolü yapan fonksiyon
     private void checkSession(){
@@ -107,28 +110,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Tanımlamaları yapan fonksiyon
     void tanimla(){
-
+        fab = findViewById(R.id.main_add_fab);
         ozet = findViewById(R.id.ozet);
         ozet.setOnClickListener(this);
         detaylar = findViewById(R.id.detaylar);
+        detaylar.setOnClickListener(this);
         yagYuzde = findViewById(R.id.yagyuzde);
         karbonhidratYuzde = findViewById(R.id.karbonhidratyuzde);
-        suyuzde = findViewById(R.id.suyuzde);
         kaloriyuzde = findViewById(R.id.kaloriyuzde);
         proteinyuzde = findViewById(R.id.proteinyuzde);
-        waterProgress = findViewById(R.id.waterprogressBar);
         kaloriProgress = findViewById(R.id.kaloriprogressBar);
         proteinProggress = findViewById(R.id.proteinprogressBar);
         yagProgress = findViewById(R.id.yagprogress);
         karbonhidratProgress = findViewById(R.id.karbonhidratprogress);
-        waterProgress.setMax(100);
+        alinanProtein = findViewById(R.id.protein_alinan);
+        gunlukProtein = findViewById(R.id.protein_gunluk);
+        gunlukKalori = findViewById(R.id.kalori_gunluk);
+        alinanKalori = findViewById(R.id.kalori_alinan);
+        alinanYag = findViewById(R.id.yag_alinan);
+        gunlukYag = findViewById(R.id.yag_gunluk);
+        alinanKarbonhidrat = findViewById(R.id.karbonhidrat_alinan);
+        gunlukKarbonhidrat = findViewById(R.id.karbonhidrat_gunluk);
         yagProgress.setMax(100);
         karbonhidratProgress.setMax(100);
         kaloriProgress.setMax(100);
         proteinProggress.setMax(100);
 
         mainNav = findViewById(R.id.main_nav);
-
         mainNav.setSelectedItemId(R.id.nav_homepage);
 
         mainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -157,6 +165,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, YedigimEkleActivity.class));
+            }
+        });
     }
     // Menüleri oluşturan fonksiyon
     @Override
@@ -171,12 +186,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.dateTime) {
-            dateTimePick();
-            return true;
-        }
         if (id == R.id.logout) {
             logout();
+            return true;
+        }
+        if (id == R.id.dateTime) {
+            dateTimePick();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -212,8 +227,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int UserID3 = sessionManagement.getSession();
                 model.UsersId = UserID3;
                 model.Date = Date;
-
-
                 // BAŞLIK
                 String sDate1 = Day + "/" + Month + "/" + year;
                 Date date1= null;
@@ -225,9 +238,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 DateFormat format = new SimpleDateFormat("dd MMMM yyyy");
                 Date current = new Date();
                 setTitle(format.format(date1));
-
-
-
                 getGunlukYeme(model);
             }
         },year, month, day);
@@ -246,16 +256,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                        currentUser = UserBesinModel.JsontoObject(s);
                                        Log.d("Deneme", currentUser.toString());
                                        setItems();
-                                       Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+                                       //Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
                                    }
                                    else{
-                                       Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+                                       //Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
                                    }
                                }
                            }, new Consumer<Throwable>() {
                                @Override
                                public void accept(Throwable throwable) throws Exception {
-                                   Toast.makeText(MainActivity.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                                   //Toast.makeText(MainActivity.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
                                }
                            }
                 )
@@ -271,26 +281,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-
+        if(view == ozet){
+            startActivity(new Intent(MainActivity.this, OzetActivity.class));
+        }
+        if(view == detaylar){
+            startActivity(new Intent(MainActivity.this, OzetActivity.class));
+        }
     }
 
     void setItems(){
 
-        int yuzdeKalori = (int)(100 * (currentUser.ToplamKalori / 500));
+        int yuzdeKalori = (int)((100 * currentUser.ToplamKalori) / currentUser.LimitKalori);
         kaloriyuzde.setText("%"+yuzdeKalori);
         kaloriProgress.setProgress(yuzdeKalori);
-
-        int yuzdeProtein = (int)(100 * (currentUser.ToplamProtein / 10));
+        String st_gunluk_Kalori = "" + (int)currentUser.LimitKalori + " kcal";
+        String st_alinan_kalori = "" + (int)currentUser.ToplamKalori + " kcal";
+        gunlukKalori.setText(st_gunluk_Kalori);
+        alinanKalori.setText(st_alinan_kalori);
+        int yuzdeProtein = (int) (100 * ((currentUser.ToplamProtein ) / (currentUser.UstLimitProtein / 4)));
+        if(yuzdeProtein < 0){
+            yuzdeProtein = 0;
+        }
         proteinyuzde.setText("%"+yuzdeProtein);
         proteinProggress.setProgress(yuzdeProtein);
+        String st_gunluk_protein = "" + (int)(currentUser.AltLimitProtein / 4) + " - " + (int)(currentUser.UstLimitProtein / 4) + " gram" ;
+        String st_alinan_protein = "" + (int)currentUser.ToplamProtein + " gram";
+        gunlukProtein.setText(st_gunluk_protein);
+        alinanProtein.setText(st_alinan_protein);
 
-        int yuzdeYag = (int)(100 * (currentUser.ToplamYag / 100));
+
+        int yuzdeYag = (int) (100 * ((currentUser.ToplamYag ) / (currentUser.UstLimitYag / 9)));
+        if(yuzdeYag < 0){
+            yuzdeYag = 0;
+        }
         yagYuzde.setText("%"+yuzdeYag);
         yagProgress.setProgress(yuzdeYag);
+        String st_gunluk_yag = "" + (int)(currentUser.AltLimitYag / 9) + " - " + (int)(currentUser.UstLimitYag / 9) + " gram" ;
+        String st_alinan_yag = "" + (int)currentUser.ToplamYag + " gram";
+        gunlukYag.setText(st_gunluk_yag);
+        alinanYag.setText(st_alinan_yag);
 
-        int yuzdeKarbon = (int)(100 * (currentUser.ToplamKarbonhidrat / 100));
+        int yuzdeKarbon = (int) (100 * ((currentUser.ToplamKarbonhidrat ) / (currentUser.UstLimitKarbon / 4)));
+        if(yuzdeKarbon < 0){
+            yuzdeKarbon = 0;
+        }
         karbonhidratYuzde.setText("%"+yuzdeKarbon);
         karbonhidratProgress.setProgress(yuzdeKarbon);
+        String st_gunluk_kar = "" + (int)(currentUser.AltLimitKarbon / 4) + " - " + (int)(currentUser.UstLimitKarbon / 4) + " gram" ;
+        String st_alinan_kar = "" + (int)currentUser.ToplamKarbonhidrat + " gram";
+        gunlukKarbonhidrat.setText(st_gunluk_kar);
+        alinanKarbonhidrat.setText(st_alinan_kar);
+
 
         if (yuzdeKalori > 100){
             kaloriyuzde.setTextSize(16);
@@ -329,7 +370,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private static Timestamp  convertStringToTimestamp(String something) {
-
 
         SimpleDateFormat dateFormat = null;
         if(something.contains(".")) {

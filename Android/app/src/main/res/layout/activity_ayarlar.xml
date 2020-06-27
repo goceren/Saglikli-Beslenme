@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AyarlarActivity">
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_nav"
         android:layout_width="match_parent"
@@ -17,5 +16,199 @@
         app:itemIconTint="@color/nav_item_color"
         app:itemTextColor="@color/nav_item_color"
         app:menu="@menu/nav_items"></com.google.android.material.bottomnavigation.BottomNavigationView>
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/bgHeader"
+        android:background="@drawable/header_register" />
+
+    <TextView
+        android:id="@+id/Title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/baloo_chettan"
+        android:text="Vücut Ölçüleri"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/circle1"
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:layout_below="@+id/bgHeader"
+        android:layout_marginTop="-5dp"
+        android:layout_marginLeft="-25dp"
+        android:src="@drawable/circletransparant" />
+
+    <ImageView
+        android:id="@+id/circle2"
+        android:layout_width="182dp"
+        android:layout_height="182dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-80dp"
+        android:layout_marginBottom="-30dp"
+        android:src="@drawable/circle" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bgHeader"
+        android:layout_margin="20dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rlayout">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="50dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="Yaşınız"
+                            android:textColor="@color/colorPurple"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <com.shawnlin.numberpicker.NumberPicker
+                            android:id="@+id/yas_picker"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            app:np_orientation="horizontal"
+                            app:np_height="64dp"
+                            app:np_dividerColor="@color/colorBlue"
+                            app:np_formatter="%02d"
+                            app:np_selectedTextColor="@color/colorPurple"
+                            app:np_selectedTextSize="25sp"
+                            app:np_textColor="@color/colorPrimary"
+                            app:np_textSize="19sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="15dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="Boyunuz (CM)"
+                            android:textColor="@color/colorPurple"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <com.shawnlin.numberpicker.NumberPicker
+                            android:id="@+id/boy_picker"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            app:np_orientation="horizontal"
+                            app:np_height="64dp"
+                            app:np_dividerColor="@color/colorBlue"
+                            app:np_formatter="%02d"
+                            app:np_selectedTextColor="@color/colorPurple"
+                            app:np_selectedTextSize="25sp"
+                            app:np_textColor="@color/colorPrimary"
+                            app:np_textSize="19sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="15dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="Kilonuz (KG)"
+                            android:textColor="@color/colorPurple"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <com.shawnlin.numberpicker.NumberPicker
+                            android:id="@+id/kilo_picker"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            app:np_orientation="horizontal"
+                            app:np_height="64dp"
+                            app:np_dividerColor="@color/colorBlue"
+                            app:np_formatter="%02d"
+                            app:np_selectedTextColor="@color/colorPurple"
+                            app:np_selectedTextSize="25sp"
+                            app:np_textColor="@color/colorPrimary"
+                            app:np_textSize="19sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="15dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="Cinsiyet"
+                            android:textColor="@color/colorPurple"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <com.shawnlin.numberpicker.NumberPicker
+                            android:id="@+id/cinsiyet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            app:np_orientation="horizontal"
+                            app:np_height="64dp"
+                            app:np_dividerColor="@color/colorBlue"
+                            app:np_formatter="%02d"
+                            app:np_selectedTextColor="@color/colorPurple"
+                            app:np_selectedTextSize="17sp"
+                            app:np_textColor="@color/colorPrimary"
+                            app:np_textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <Button
+                android:id="@+id/button_onayla"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Güncelle"
+                android:background="@drawable/bg_login_ui"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:layout_below="@+id/cv"
+                android:layout_alignLeft="@+id/cv"
+                android:layout_alignRight="@+id/cv"
+                android:layout_marginTop="-50dp"
+                android:elevation="10dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                />
+        </RelativeLayout>
+    </ScrollView>
+
+
+
 
 </RelativeLayout>

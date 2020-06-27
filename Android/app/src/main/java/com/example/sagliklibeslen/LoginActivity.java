@@ -143,7 +143,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                        }
                                    }
                                    else{
-                                       Toast.makeText(LoginActivity.this, s, Toast.LENGTH_SHORT).show();
+                                       //Toast.makeText(LoginActivity.this, s, Toast.LENGTH_SHORT).show();
                                        dialog.dismiss();
                                    }
                                }
@@ -151,7 +151,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                @Override
                                public void accept(Throwable throwable) throws Exception {
                                    dialog.dismiss();
-                                   Toast.makeText(LoginActivity.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                                   //Toast.makeText(LoginActivity.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
                                }
                            }
                 )
@@ -171,7 +171,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private Users getUser(String json) throws JSONException {
         currentUser = Users.JsontoObject(json);
-        Toast.makeText(LoginActivity.this, "Hoşgeldiniz " + currentUser.Name, Toast.LENGTH_LONG).show();
+        //Toast.makeText(LoginActivity.this, "Hoşgeldiniz " + currentUser.Name, Toast.LENGTH_LONG).show();
         // Objeyi session oluşturmak için SessionManagement e gönder
         SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
         sessionManagement.saveSession(currentUser);

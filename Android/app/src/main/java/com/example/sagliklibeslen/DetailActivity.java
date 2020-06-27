@@ -89,7 +89,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 yas = newVal;
-                Toast.makeText(DetailActivity.this, "Yaş : " + yas, Toast.LENGTH_LONG).show();
+                //Toast.makeText(DetailActivity.this, "Yaş : " + yas, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -98,7 +98,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 kilo = newVal;
-                Toast.makeText(DetailActivity.this, "Kilo : " + kilo, Toast.LENGTH_LONG).show();
+                //Toast.makeText(DetailActivity.this, "Kilo : " + kilo, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -107,7 +107,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 boy = newVal;
-                Toast.makeText(DetailActivity.this, "Boy : " + boy, Toast.LENGTH_LONG).show();
+                //Toast.makeText(DetailActivity.this, "Boy : " + boy, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -115,7 +115,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 cinsiyetSonuc = newVal;
-                Toast.makeText(DetailActivity.this, "Cinsiyet : " + cinsiyetSonuc, Toast.LENGTH_LONG).show();
+                //Toast.makeText(DetailActivity.this, "Cinsiyet : " + cinsiyetSonuc, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -172,12 +172,12 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                                public void accept(String s) throws Exception {
                                    if (!s.equals("Bu email adresi kayitli degil")){
                                        // Main Activitye Yönlendir
-                                       Toast.makeText(DetailActivity.this, s, Toast.LENGTH_LONG).show();
+                                       //Toast.makeText(DetailActivity.this, s, Toast.LENGTH_LONG).show();
                                        getUser(s);
                                        moveToMainActivity();
                                    }
                                    else{
-                                       Toast.makeText(DetailActivity.this, s, Toast.LENGTH_SHORT).show();
+                                       //Toast.makeText(DetailActivity.this, s, Toast.LENGTH_SHORT).show();
                                        dialog.dismiss();
                                    }
                                }
@@ -185,7 +185,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                                @Override
                                public void accept(Throwable throwable) throws Exception {
                                    dialog.dismiss();
-                                   Toast.makeText(DetailActivity.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                                   //Toast.makeText(DetailActivity.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
                                }
                            }
                 )
